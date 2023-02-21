@@ -1,13 +1,9 @@
 from typing import List
 """
-给你一个变量对数组 equations 和一个实数值数组 values 作为已知条件，其中 equations[i] = [Ai, Bi] 和 values[i] 共同表示等式 Ai / Bi = values[i] 。每个 Ai 或 Bi 是一个表示单个变量的字符串。
+399 除法求值
+给出a/b ， b/c的值，求queries中 a/c的值，如果不存在就返回-1
 
-另有一些以数组 queries 表示的问题，其中 queries[j] = [Cj, Dj] 表示第 j 个问题，请你根据已知条件找出 Cj / Dj = ? 的结果作为答案。
-返回 所有问题的答案 
-
-来源：力扣（LeetCode）
-链接：https://leetcode.cn/problems/evaluate-division
-著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+建图+dfs ， 用dfs 算累计路径的值
 
 思路，本题是建图+dfs
 """
