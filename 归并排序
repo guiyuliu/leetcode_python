@@ -1,0 +1,38 @@
+"""
+
+"""
+
+def mergeSort(array):
+    if len(array) > 1: # 确定退出的条件
+        #   递归的划分左右两个子序列
+        m = len(array)//2
+        L = array[:m]  # 左右两个序列的备份
+        M = array[m:]
+        mergeSort(L)
+        mergeSort(M)
+        i = j = k = 0      # i for 左序列第一个，j for 右序列第一个， k for 主序列
+        # Until we reach either end of either L or M, pick larger among
+        # elements L and M and place them in the correct position at A[p..r]
+        while i < len(L) and j < len(M):
+            if L[i] < M[j]:
+                array[k] = L[i]
+                i += 1
+            else:
+                array[k] = M[j]
+                j += 1
+            k += 1
+        # When we run out of elements in either L or M,
+        # pick up the remaining elements and put in A[p..r]
+        while i < len(L):
+            array[k] = L[i]
+            i += 1
+            k += 1
+        while j < len(M):
+            array[k] = M[j]
+            j += 1
+            k += 1
+# Driver program
+if __name__ == '__main__':
+    array = [6, 5, 12, 10, 9, 1]
+    mergeSort(array)
+    print("Sorted array is: ", array)
